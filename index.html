@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A.L.I.L. — Autonomous Liquidity Intelligence Layer</title>
 
-    <!-- Tailwind (CDN is fine for now) -->
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
     <script>
       tailwind.config = {
@@ -25,46 +25,54 @@
               textSecondary: '#CBD5E1',
               textMuted: '#94A3B8',
               borderSubtle: 'rgba(117, 26, 255, 0.25)',
-              borderGlow: 'rgba(31, 240, 255, 0.35)',
+              borderGlow: 'rgba(31, 240, 255, 0.35)'
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
-              mono: ['JetBrains Mono', 'monospace'],
+              mono: ['JetBrains Mono', 'monospace']
             },
             boxShadow: {
               glow: '0 0 20px rgba(31, 240, 255, 0.25)',
               'glow-primary': '0 0 25px rgba(117, 26, 255, 0.3)',
-              panel: '0 8px 32px rgba(0, 0, 0, 0.5)',
+              panel: '0 8px 32px rgba(0, 0, 0, 0.5)'
             },
             backgroundImage: {
               'hero-gradient': 'linear-gradient(to bottom, #151226 0%, #262045 100%)',
               'btn-gradient': 'linear-gradient(135deg, #1FF0FF 0%, #00A3FF 100%)',
-              'card-gradient': 'linear-gradient(180deg, rgba(31, 27, 58, 0.7) 0%, rgba(21, 18, 38, 0.9) 100%)',
-            },
-            animation: {
-              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              float: 'float 6s ease-in-out infinite',
+              'card-gradient': 'linear-gradient(180deg, rgba(31,27,58,0.7) 0%, rgba(21,18,38,0.9) 100%)'
             },
             keyframes: {
               float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+              cursor: { '0%,100%': { opacity: 1 }, '50%': { opacity: 0 } }
+            },
+            animation: {
+              float: 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4,0,0.6,1) infinite'
             }
-          },
-        },
+          }
+        }
       }
     </script>
 
     <style>
       body { background:#151226; color:#fff; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
-      .holo-grid{background-size:50px 50px;background-image:linear-gradient(to right,rgba(117,26,255,.08) 1px,transparent 1px),linear-gradient(to bottom,rgba(117,26,255,.08) 1px,transparent 1px);mask-image:radial-gradient(circle at center, black 50%, transparent 90%);pointer-events:none;position:absolute;inset:0;z-index:0;}
-      ::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:#151226}::-webkit-scrollbar-thumb{background:#342E5C;border-radius:3px}::-webkit-scrollbar-thumb:hover{background:#751AFF}
+      .holo-grid{background-size:50px 50px;background-image:
+        linear-gradient(to right,rgba(117,26,255,.08) 1px,transparent 1px),
+        linear-gradient(to bottom,rgba(117,26,255,.08) 1px,transparent 1px);
+        mask-image:radial-gradient(circle at center, black 50%, transparent 90%);
+        pointer-events:none;position:absolute;inset:0;z-index:0;}
+      ::-webkit-scrollbar{width:6px;height:6px}
+      ::-webkit-scrollbar-track{background:#151226}
+      ::-webkit-scrollbar-thumb{background:#342E5C;border-radius:3px}
+      ::-webkit-scrollbar-thumb:hover{background:#751AFF}
       .typewriter-cursor::after{content:'|';animation:cursor 1s infinite;color:#1FF0FF}
-      @keyframes cursor{0%,100%{opacity:1}50%{opacity:0}}
     </style>
   </head>
+
   <body>
     <div id="root"></div>
 
-    <!-- IMPORTANT: Vite entry (ensure file exists) -->
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Vite entry (root-level main.tsx) -->
+    <script type="module" src="/main.tsx"></script>
   </body>
 </html>
