@@ -4,34 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A.L.I.L. — Autonomous Liquidity Intelligence Layer</title>
+
+    <!-- Tailwind (CDN is fine for now) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              background: '#151226', // Lighter Midnight
-              secondaryBg: '#1F1B3A', // Lighter Panel
-              primary: '#751AFF', // Brighter Qubic Purple
+              background: '#151226',
+              secondaryBg: '#1F1B3A',
+              primary: '#751AFF',
               primaryLight: '#9545FF',
-              accent: '#1FF0FF', // Brighter Neon Cyan
-              success: '#1AFFB0', // Brighter Neon Green
-              danger: '#FF6680', // Brighter Coral Red
-              textPrimary: '#FFFFFF', // Pure White
-              textSecondary: '#CBD5E1', // Lighter Slate
-              textMuted: '#94A3B8', // Lighter Muted
-              borderSubtle: 'rgba(117, 26, 255, 0.25)', // Increased visibility
-              borderGlow: 'rgba(31, 240, 255, 0.35)', // Increased glow
+              accent: '#1FF0FF',
+              success: '#1AFFB0',
+              danger: '#FF6680',
+              textPrimary: '#FFFFFF',
+              textSecondary: '#CBD5E1',
+              textMuted: '#94A3B8',
+              borderSubtle: 'rgba(117, 26, 255, 0.25)',
+              borderGlow: 'rgba(31, 240, 255, 0.35)',
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
               mono: ['JetBrains Mono', 'monospace'],
             },
             boxShadow: {
-              'glow': '0 0 20px rgba(31, 240, 255, 0.25)',
+              glow: '0 0 20px rgba(31, 240, 255, 0.25)',
               'glow-primary': '0 0 25px rgba(117, 26, 255, 0.3)',
-              'panel': '0 8px 32px rgba(0, 0, 0, 0.5)',
+              panel: '0 8px 32px rgba(0, 0, 0, 0.5)',
             },
             backgroundImage: {
               'hero-gradient': 'linear-gradient(to bottom, #151226 0%, #262045 100%)',
@@ -40,80 +43,28 @@
             },
             animation: {
               'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'float': 'float 6s ease-in-out infinite',
+              float: 'float 6s ease-in-out infinite',
             },
             keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' },
-              }
+              float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
             }
           },
         },
       }
     </script>
-    <style>
-      body {
-        background-color: #151226;
-        color: #FFFFFF;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
-      }
-      
-      /* Holographic Grid Background */
-      .holo-grid {
-        background-size: 50px 50px;
-        background-image: 
-          linear-gradient(to right, rgba(117, 26, 255, 0.08) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(117, 26, 255, 0.08) 1px, transparent 1px);
-        mask-image: radial-gradient(circle at center, black 50%, transparent 90%);
-        pointer-events: none;
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-      }
 
-      ::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #151226; 
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #342E5C; 
-        border-radius: 3px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #751AFF; 
-      }
-      
-      .typewriter-cursor::after {
-        content: '|';
-        animation: cursor 1s infinite;
-        color: #1FF0FF;
-      }
-      
-      @keyframes cursor {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-      }
+    <style>
+      body { background:#151226; color:#fff; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; }
+      .holo-grid{background-size:50px 50px;background-image:linear-gradient(to right,rgba(117,26,255,.08) 1px,transparent 1px),linear-gradient(to bottom,rgba(117,26,255,.08) 1px,transparent 1px);mask-image:radial-gradient(circle at center, black 50%, transparent 90%);pointer-events:none;position:absolute;inset:0;z-index:0;}
+      ::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:#151226}::-webkit-scrollbar-thumb{background:#342E5C;border-radius:3px}::-webkit-scrollbar-thumb:hover{background:#751AFF}
+      .typewriter-cursor::after{content:'|';animation:cursor 1s infinite;color:#1FF0FF}
+      @keyframes cursor{0%,100%{opacity:1}50%{opacity:0}}
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
-    "recharts": "https://aistudiocdn.com/recharts@^3.5.1"
-  }
-}
-</script>
-</head>
+  </head>
   <body>
     <div id="root"></div>
+
+    <!-- IMPORTANT: Vite entry (ensure file exists) -->
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
